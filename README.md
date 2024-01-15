@@ -25,15 +25,15 @@ SO THAT I can reliably retrieve them for later use
 ```md
 GIVEN a text editor web application
 WHEN I open my application in my editor
-THEN I should see a client server folder structure
+THEN I should see a client server folder structure - done
 WHEN I run `npm run start` from the root directory
-THEN I find that my application should start up the backend and serve the client
+THEN I find that my application should start up the backend and serve the client - done
 WHEN I run the text editor application from my terminal
-THEN I find that my JavaScript files have been bundled using webpack
+THEN I find that my JavaScript files have been bundled using webpack - done
 WHEN I run my webpack plugins
-THEN I find that I have a generated HTML file, service worker, and a manifest file
+THEN I find that I have a generated HTML file, service worker, and a manifest file - done
 WHEN I use next-gen JavaScript in my application
-THEN I find that the text editor still functions in the browser without errors
+THEN I find that the text editor still functions in the browser without errors - done
 WHEN I open the text editor
 THEN I find that IndexedDB has immediately created a database storage
 WHEN I enter content and subsequently click off of the DOM window
