@@ -18,23 +18,16 @@ module.exports = () => {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
+    
     plugins: [
             new HtmlWebpackPlugin({
                 template: './index.html',
                 title: 'Webpack Plugin'
             }),
-            new WorkboxPlugin.GenerateSW({
-                exclude: [/\.(?:png|jpg|jpeg|svg)$/],
-                runtimeCaching: [{
-                    urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
-                    handler: 'CacheFirst',
-                    options: {
-                        cacheName: 'images',
-                        expiration: {
-                            maxEntries: 2
-                        }
-                    }
-                }]
+            new WorkboxPlugin.GenerateSW(),
+            new InjectManifest({
+                swSrc: './src-sw.js',
+                swDest: 'src-sw.js'
             }),
             new WebpackPwaManifest({
                 name:'Just Another Text Editor',

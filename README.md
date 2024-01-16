@@ -43,7 +43,7 @@ THEN I find that the content in the text editor has been retrieved from our Inde
 WHEN I click on the Install button
 THEN I download my web application as an icon on my desktop
 WHEN I load my web application
-THEN I should have a registered service worker using workbox
+THEN I should have a registered service worker using workbox - done
 WHEN I register a service worker
 THEN I should have my static assets pre cached upon loading along with subsequent pages and static assets
 WHEN I deploy to Heroku
