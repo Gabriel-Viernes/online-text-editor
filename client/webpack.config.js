@@ -23,7 +23,19 @@ module.exports = () => {
                 template: './index.html',
                 title: 'Webpack Plugin'
             }),
-            new WorkboxPlugin.GenerateSW(),
+            new WorkboxPlugin.GenerateSW({
+                exclude: [/\.(?:png|jpg|jpeg|svg)$/],
+                runtimeCaching: [{
+                    urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+                    handler: 'CacheFirst',
+                    options: {
+                        cacheName: 'images',
+                        expiration: {
+                            maxEntries: 2
+                        }
+                    }
+                }]
+            }),
             new WebpackPwaManifest({
                 name:'Just Another Text Editor',
                 short_name:'JATE',
@@ -32,6 +44,13 @@ module.exports = () => {
                 theme_color: '#000000',
                 start_url: './',
                 publicPath: './',
+                icons: [
+                    {
+                        src: path.resolve('src/images/logo.png'),
+                        sizes: 96,
+                        destination: path.join('assets','icons')
+                    }
+                ]
             })
       
     ],
