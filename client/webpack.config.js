@@ -22,7 +22,8 @@ module.exports = () => {
     plugins: [
             new HtmlWebpackPlugin({
                 template: './index.html',
-                title: 'Webpack Plugin'
+                title: 'Webpack Plugin',
+                favicon: "./favicon.ico"
             }),
             new WorkboxPlugin.GenerateSW(),
             new InjectManifest({
