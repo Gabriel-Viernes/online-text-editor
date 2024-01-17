@@ -40,9 +40,16 @@ module.exports = () => {
                 icons: [
                     {
                         src: path.resolve('src/images/logo.png'),
-                        sizes: 96,
+                        sizes: [96,192,512],
                         destination: path.join('assets','icons')
                     }
+                ],
+                prefer_related_applications: true,
+                related_applications: [
+                  {
+                    platform: "play",
+                    id: "myId"
+                  }
                 ]
             })
       
